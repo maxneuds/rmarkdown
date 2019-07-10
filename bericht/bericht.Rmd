@@ -1,0 +1,49 @@
+---
+title: 'Praktikum 1'
+author: 'Maximilian Neudert'
+output:
+  pdf_document:
+    latex_engine: lualatex
+    includes:
+      in_header: 'style/preamble.tex'
+      before_body: 'style/prefix.tex'
+    fig_caption: true
+    fig_width: 10
+    fig_height: 5
+    df_print: kable
+    toc: false
+---
+
+```{r global_options, echo=FALSE}
+knitr::opts_chunk$set(
+  cache = TRUE,
+  comment = "#>",
+  echo = TRUE,
+  error = TRUE,
+  out.width = "100%",
+  tidy = TRUE,
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+```{r, echo=FALSE}
+usepackage = function(package_name) 
+{
+  p = deparse(substitute(package_name))
+  if (!is.element(p, installed.packages()[,1]))
+    install.packages(p, dep = TRUE, repos = "http://cran.us.r-project.org")
+  require(p, character.only = TRUE)
+}
+
+usepackage(formatR)
+usepackage(ggplot2)
+usepackage(tidyr)
+
+set.seed(42)
+```
+
+# Aufgabe 1
+
+## a)
+

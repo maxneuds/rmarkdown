@@ -1,0 +1,55 @@
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage[spelling=new, babelshorthands=true]{german}
+\usepackage{csquotes}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{float}
+\floatstyle{boxed}
+\restylefloat{figure}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{lualatex-math}
+
+%
+% Font
+%
+\setmainfont{Source Serif Pro}
+\setsansfont{Source Sans Pro}
+\setmonofont{Source Code Pro}
+% make operators look like text instead of variables
+\DeclareSymbolFont{operators}{TU}{\rmdefault}{m}{n}
+\SetSymbolFont{operators}{bold}{TU}{\rmdefault}{b}{n}
+
+%
+% Pagestyle
+%
+\usepackage[
+  pagestyleset = KOMA-Script,
+  footsepline,
+  headsepline
+]{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\automark[section]{section}
+\ihead{\normalfont \theauthor}
+\chead{}
+\ohead{\normalfont \rightmark}
+\ifoot{}
+\cfoot{\normalfont \pagemark}
+\ofoot{}
+
+\usepackage{xcolor}
+\definecolor{linkblue}{rgb}{0,0.28,0.8}
+\definecolor{citeblue}{rgb}{0,0.6,0.8}
+\definecolor{urlorange}{rgb}{0.9,0.3,0}
+\usepackage{hyperref}
+\hypersetup{
+  pdftoolbar = false,
+  pdfmenubar = false,
+  colorlinks = true,
+  linkcolor = linkblue,
+  citecolor = citeblue,
+  urlcolor = urlorange,
+  filecolor = red
+}
